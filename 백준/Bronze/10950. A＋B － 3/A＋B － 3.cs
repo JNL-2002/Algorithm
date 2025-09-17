@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace Algorithm
 {
@@ -7,19 +8,16 @@ namespace Algorithm
         static void Main(string[] args)
         {
             int input = int.Parse(Console.ReadLine());
-            int[] result = new int[input];
-            
+            StringBuilder sb = new StringBuilder();
+
 
             for (int i = 0; i < input; i++)
             {
                 string[] value = Console.ReadLine().Split();
-                result[i] = int.Parse(value[0]) + int.Parse(value[1]);
+                sb.Append(int.Parse(value[0]) + int.Parse(value[1]) + "\n");
             }
 
-            foreach (int i in result)
-            {
-                Console.WriteLine(i);
-            }
+            Console.WriteLine(sb);
         }
     }
 }
