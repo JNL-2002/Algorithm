@@ -18,9 +18,9 @@ namespace Algorithm
 
             int index = 0;
 
-            foreach (string v in value)
+            for (int i = 0; i < value.Length; i++)
             {
-                if (int.Parse(v) == V)
+                if (int.Parse(value[i]) == V)
                     index++;
             }
 
