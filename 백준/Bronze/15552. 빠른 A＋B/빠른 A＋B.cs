@@ -1,5 +1,6 @@
 using System;
 using System.Text;
+using System.IO;
 
 namespace Algorithm
 {
@@ -7,18 +8,23 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            int input = int.Parse(Console.ReadLine());
-            StringBuilder output = new StringBuilder();
+            StreamReader sr = new StreamReader(Console.OpenStandardInput());
+            StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
+            StringBuilder sb = new StringBuilder();
 
-            for (int i = 0; i < input; i++)
+            int T = int.Parse(sr.ReadLine());
+
+            for (int i = 0; i < T; i++)
             {
-                string[] value = Console.ReadLine().Split(' ');
+                string[] value = sr.ReadLine().Split();
                 int a = int.Parse(value[0]);
                 int b = int.Parse(value[1]);
-                output.AppendLine((a + b).ToString());
+                sb.AppendLine((a + b).ToString());
             }
 
-            Console.Write(output);
+            sw.WriteLine(sb);
+            sr.Close();
+            sw.Close();
         }
     }
 }
