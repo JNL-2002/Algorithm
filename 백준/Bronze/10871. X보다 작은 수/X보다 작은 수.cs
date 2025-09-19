@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using System.IO;
 
@@ -11,16 +12,14 @@ namespace Algorithm
             StreamWriter sw = new StreamWriter(Console.OpenStandardOutput());
             StringBuilder sb = new StringBuilder();
 
-            string[] N = sr.ReadLine().Split();
-            string[] index = sr.ReadLine().Split();
-            int count = 0;
+            int[] N = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
+            int[] index = Array.ConvertAll(sr.ReadLine().Split(), int.Parse);
 
-            for (int i = 0; i < int.Parse(N[0]); i++)
+            for (int i = 0; i < N[0]; i++)
             {
-                count = int.Parse(index[i]);
-                if (count < int.Parse(N[1]))
+                if (index[i] < N[1])
                 {
-                    sb.Append(count + " ");
+                    sb.Append(index[i] + " ");
                 }
             }
 
